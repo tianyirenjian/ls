@@ -1,13 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
+#include "lstr.h"
 
 #define MALLOC_STEP 50
-
-typedef struct lstr {
-    char** content;
-    int length;
-} lstr;
 
 lstr *listdir(char* path);
 
