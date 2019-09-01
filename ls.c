@@ -23,6 +23,7 @@ int main(int argv, char** args)
     char *options = getOptions(argv, args);
 
     strArray *dirs = listDir(path);
+    sortStrArrayContent(dirs);
     for (int i = 0; i < dirs->length; i ++) {
         printf("%s", dirs->content[i]);
         if (i != dirs->length - 1) {

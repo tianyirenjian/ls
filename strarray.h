@@ -3,4 +3,4 @@ typedef struct strArray {
     int length;
 } strArray;
 
-// strArray *sortStrArrayContent(strArray* sa)
+void *sortStrArrayContent(strArray* sa);
