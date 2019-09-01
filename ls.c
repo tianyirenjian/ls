@@ -25,10 +25,8 @@ int main(int argv, char** args)
     strArray *dirs = listDir(path);
     for (int i = 0; i < dirs->length; i ++) {
         printf("%s", dirs->content[i]);
-        if (hasOption(options, 'l')) {
+        if (i != dirs->length - 1) {
             printf("\n");
-        } else {
-            printf("\t");
         }
     }
     printf("\n");
