@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
+#include <string.h>
 #include "strarray.h"
 
 typedef int bool;
@@ -21,8 +22,17 @@ int main(int argv, char** args)
         path = getPath(argv, args);
     }
     char *options = getOptions(argv, args);
+    bool all = hasOption(options, 'a');
 
     strArray *dirs = listDir(path);
+    if (!all) {
+        for (int k = 0; k < dirs->length; k++) {
+            if (strlen(dirs->content[k]) == 0 || dirs->content[k][0] == '.') {
+                removeElementByIndex(dirs, k);
+                k--;
+            }
+        }
+    }
     sortStrArrayContent(dirs);
     for (int i = 0; i < dirs->length; i ++) {
         printf("%s", dirs->content[i]);

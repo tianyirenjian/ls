@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdlib.h>
 #include "strarray.h"
 
 void *sortStrArrayContent(strArray* sa)
@@ -12,4 +13,13 @@ void *sortStrArrayContent(strArray* sa)
             }
         }
     }
+}
+
+void removeElementByIndex(strArray* sa, int index)
+{
+    for (int i = index; i < sa->length - 1; i ++) {
+        sa->content[i] = sa->content[i + 1];
+    }
+    //free(sa->content[sa->length - 1]);
+    sa->length --;
 }
