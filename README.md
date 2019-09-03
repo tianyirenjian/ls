@@ -1,7 +1,7 @@
 # ls
 ls command.
 
-## Compile
+### Compile
 
 macos
 ```
@@ -13,7 +13,7 @@ linux
 gcc ls.c strarray.c -std=c99 -o lsc
 ```
 
-## Execute
+### Execute
 
 ```
 ./lsc
